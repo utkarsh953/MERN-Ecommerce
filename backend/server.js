@@ -6,6 +6,7 @@ import { notFound, errorHandler } from './middleware/errorMiddleware.js'
 
 import productRoutes from './routes/productRoutes.js'
 import userRoutes from './routes/userRoutes.js'
+import orderRoutes from './routes/orderRoutes.js'
 
 //Dotenv is a module that loads environment variables from a .env file into process.env.
 //The process object is a global that provides information about, and control over, the current Node.js process
@@ -23,6 +24,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/products', productRoutes)
 app.use('/api/users', userRoutes)
+app.use('/api/orders', orderRoutes)
 
 app.use(notFound)
 app.use(errorHandler)
